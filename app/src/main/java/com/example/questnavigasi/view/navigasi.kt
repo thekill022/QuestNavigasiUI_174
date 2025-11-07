@@ -40,10 +40,19 @@ fun DataApp(
                 composable(route = Navigasi.Detail.name) {
                     TampilData(
                         onBackBtnClick = {
-//                            nanti akan kita isikan function
+                            cencelAndBackToFormulir(navController)
                         }
                     )
                 }
             }
     }
+}
+
+private fun cencelAndBackToFormulir(
+    navController : NavHostController
+) {
+    navController.popBackStack(
+        route = Navigasi.Formulirku.name,
+        inclusive = false
+    )
 }
